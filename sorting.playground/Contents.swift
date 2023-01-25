@@ -40,3 +40,47 @@ if sub/classNotesArray.count > 50 {
     print("you should study more than now")
 }
 
+// ******* new example
+
+class Address {
+    var country:String?
+    var city:String?
+    init(country:String, city:String) {
+        self.country = country
+        self.city = city
+    }
+    
+}
+
+class Personel {
+    var personelID:Int?
+    var personelName:String?
+    var personelAddress:Address?
+    
+    init(personelID:Int, personelName:String, personelAddress:Address ) {
+        self.personelID = personelID
+        self.personelName = personelName
+        self.personelAddress = personelAddress
+    }
+    
+    
+}
+
+var address1 = Address(country: "Türkiye", city: "Eskişehir")
+var address2 = Address(country: "Hollanda", city: "Den haag ")
+
+var personel1 = Personel(personelID: 001, personelName: "aylin", personelAddress: address1)
+var personel2 = Personel(personelID: 001, personelName: "ayln", personelAddress: address2)
+
+var personelArray = [Personel]() // generate a new empty array
+personelArray.append(personel1)
+personelArray.append(personel2)
+
+for p in personelArray{
+    print("******")
+    print("personel id: \(p.personelID!) personel name: \(p.personelName!) personel address: \(p.personelAddress!)")
+    
+}
+
+
+

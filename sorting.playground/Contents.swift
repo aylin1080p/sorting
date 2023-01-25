@@ -84,9 +84,9 @@ for p in personelArray{
     
 }
 
-/// set functions
+/// set functions generate a protocol and Set methods, use equatable and hashable
 ///
-class Student: Hashable {
+class Student: Equatable,Hashable {
     var number:Int?
     var name:String?
     var classs:String?
@@ -108,6 +108,9 @@ class Student: Hashable {
         return lhs.number == rhs.number // it can compare two different number and returns a boolean result using them
         
     }
+    
+    
+    
 }
 
 var s1 = Student(number: 001, name: "ayşe", classs: "11B")
@@ -129,3 +132,14 @@ for ii in studentList {
     print("student numbers : \(ii.number)")
 }
 
+// there is a clear example from documentation file:
+//extension GridPoint: Hashable {
+//static func == (lhs: GridPoint, rhs: GridPoint) -> Bool {
+  //  return lhs.x == rhs.x && lhs.y == rhs.y
+//}
+
+//func hash(into hasher: inout Hasher) {
+//  hasher.combine(x)
+ //   hasher.combine(y)
+//}
+//}
